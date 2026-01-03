@@ -45,7 +45,7 @@ A custom file manager:
   
 ## 🚀 Getting Started
 
-## Dependencias
+### Dependencias
 Install the so-commons-library (required for networking and logging):
 
 ```bash
@@ -55,7 +55,7 @@ make debug
 make install
 ```
 
-## Compilation & Execution
+### Compilation & Execution
 Compile each module independently:
 ```bash
 # Example for Kernel
