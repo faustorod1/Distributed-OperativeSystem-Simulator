@@ -28,8 +28,6 @@ A custom file manager:
   - Indexed Allocation: Implements an indexed block structure to store files, managing metadata and data blocks independently.
   - Persistent Storage: Simulated disk storage via binary files (bloques.dat) with configurable access delays.
 
-
-
 ## 🛠️ Technical Highlights
 - Inter-Process Communication (IPC): Developed a custom communication protocol over TCP Sockets, featuring Handshakes and Packet Serialization.
 - Advanced Synchronization: Extensive use of Semaphores and Mutexes to ensure thread safety during resource contention.
@@ -63,3 +61,10 @@ cd kernel && make
 ./bin/kernel {pseudocode_path} {size} {test_flag}
 ```
 Flags example: -1.1 (FIFO), -4 (Dynamic Partitions), -6 (Stress Test).
+
+## 📖 Documentation & Requirements
+To understand the full scope of this project, its architectural constraints, and the official testing suite, please refer to the following documents:
+
+- [Project Specifications & Requirements](./docs/specifications&requirements.pdf): Detailed definitions for each module (Kernel, CPU, Memory, FileSystem) and the communication protocol.
+
+- [Official Testing Guide](./docs/tests/testing_guide.pdf): Step-by-step instructions for the integration tests and final evaluation scenarios.
