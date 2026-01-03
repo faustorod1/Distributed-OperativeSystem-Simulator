@@ -1,3 +1,30 @@
+# Distributed Operating System Simulator (C)
+A high-performance simulation of a **Distributed Operating System** developed for the **Software Systems (Sistemas Operativos)** course at **UTN FRBA**. This project implements a modular architecture using **POSIX Sockets** and **Multithreading** to simulate hardware-level resource management.
+
+## 🏗️ System Architecture
+The platform is composed of four independent modules that interact via a custom networking protocol:
+
+* **Kernel:** The central orchestrator. It manages process and thread scheduling (FIFO, Prioridades, CMN), handles **Syscalls**, and manages inter-module synchronization using `pthreads`.
+* **CPU:** Simulates the Fetch-Decode-Execute cycle. It interfaces with the Kernel via `Dispatch` and `Interrupt` sockets and translates logical addresses to physical ones through the MMU.
+* **Memory:** Manages simulated RAM using **Paging/Segmentation**. Supports memory dump operations (`DUMP_MEMORY`) and protection. Also implements a flexible allocation system, supporting multiple algorithms such as First-Fit, Best-Fit, and Worst-Fit to optimize RAM utilization and manage fragmentation.
+* **FileSystem:** Handles persistent storage, implementing disk structures and metadata protocols.
+
+## 🛠️ Technical Highlights
+Based on the provided source code, this implementation features:
+* **Thread-Safe Kernel:** Advanced management of `pthread_create` and `pthread_detach` to handle asynchronous operations like memory dumps.
+* **Robust Syscall Interface:** Implementation of a wide range of operations: `PROCESS_CREATE`, `THREAD_JOIN`, `MUTEX_LOCK`, `IO` requests, and `DUMP_MEMORY`.
+* **Custom IPC Protocol:** Reliable communication using the `so-commons-library`, including Handshake protocols and operation code (`op_code`) handling.
+* **Memory Management Unit (MMU):** Logic for simulating realistic memory access and handling `SEGMENTATION_FAULT` conditions.
+
+## 👥 Contributors
+- Juan Fernandez
+- Juan Pablo Montemarani
+- Manuel Rafael
+- Fausto Rodríguez
+- Juan Tarducci
+
+
+  
 # tp-scaffold
 
 Esta es una plantilla de proyecto diseñada para generar un TP de Sistemas
